@@ -33,8 +33,7 @@
       "type": "input",
       "ref": "_defaultAdmin",
       "label": "_admin",
-      "defaultValue": "0xD50E4D1E0b49eb64a6bF2f48731c035E8948D219",
-      "component": { "type": "hidden"},
+      "component": { "type": "hidden", "subtype": "contract-address" },
       "locked": false
     },
     {
@@ -82,9 +81,7 @@
       "ref": "creator",
       "label": "Creator",
       "locked": false,
-      "component": {
-        "type": "address"
-      }
+      "component": { "type": "address", "subtype": "contract-address" }
     },
     {
       "type": "input",
