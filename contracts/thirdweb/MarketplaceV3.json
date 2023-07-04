@@ -74,9 +74,10 @@
       "type": "input",
       "ref": "trustedForwarders",
       "label": "Trusted Forwarders",
+      "defaultValue": { "ref": "trustedForwarders" },
       "locked": false,
       "component": {
-        "type": "address-array"
+        "type": "hidden"
       }
     },
     {
