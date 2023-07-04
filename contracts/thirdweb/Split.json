@@ -1,0 +1,108 @@
+{
+  "paramsOrder": [
+    "_defaultAdmin",
+    "contractURI",
+    "trustedForwarders",
+    "payees",
+    "shares"
+  ],
+  "output": [
+    {
+      "name": "params",
+      "fields": [
+        { "name": "_defaultAdmin" },
+        {
+          "type": "ipfs-file",
+          "name": "contractURI",
+          "fields": ["name", "description", "image"]
+        },
+        { "name": "trustedForwarders" },
+        { "name": "payees" },
+        { "name": "shares" }
+      ]
+    }
+  ],
+  "form": [
+    {
+      "type": "input",
+      "ref": "_defaultAdmin",
+      "label": "_admin",
+      "component": { "type": "hidden", "subtype": "connected-address" },
+      "locked": false
+    },
+    {
+      "type": "input",
+      "ref": "image",
+      "label": "Image",
+      "component": { "type": "image" },
+      "locked": false,
+      "col": {
+        "sm": 2
+      }
+    },
+    {
+      "type": "input-group",
+      "col": { "sm": 10 },
+      "inputs": [
+        {
+          "type": "input",
+          "ref": "name",
+          "label": "Name",
+          "locked": false,
+          "col": {
+            "sm": 12
+          }
+        },
+        {
+          "type": "input",
+          "ref": "description",
+          "label": "Description",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "type": "input",
+      "ref": "trustedForwarders",
+      "label": "Trusted Forwarders",
+      "defaultValue": { "ref": "trustedForwarders" },
+      "locked": false,
+      "component": {
+        "type": "hidden"
+      }
+    },
+    {
+      "type": "input-group",
+      "inputs": [
+        {
+          "type": "input",
+          "ref": "payees",
+          "label": "Payees",
+          "locked": false,
+          "col": {
+            "sm": 6
+          },
+          "component": {
+            "type": "address-array"
+          }
+        },
+
+        {
+          "type": "input",
+          "ref": "shares",
+          "label": "Shares",
+          "locked": false,
+          "col": {
+            "sm": 6
+          },
+          "component": {
+            "type": "decimal-array",
+            "decimals": 0
+          }
+        }
+      ]
+    }
+  ],
+  "name": "Split",
+  "description": "Distribute funds among multiple recipients"
+}

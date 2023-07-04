@@ -1,0 +1,135 @@
+{
+  "paramsOrder": [
+    "_defaultAdmin",
+    "contractURI",
+    "trustedForwarders",
+    "token",
+    "initialVotingDelay",
+    "initialVotingPeriod",
+    "initialProposalThreshold",
+    "initialVoteQuorumFraction"
+  ],
+  "output": [
+    {
+      "name": "params",
+      "fields": [
+        { "name": "_defaultAdmin" },
+        {
+          "type": "ipfs-file",
+          "name": "contractURI",
+          "fields": ["name", "description", "image"]
+        },
+        { "name": "trustedForwarders" },
+        { "name": "token" },
+        { "name": "initialVotingDelay" },
+        { "name": "initialVotingPeriod" },
+        { "name": "initialProposalThreshold" },
+        { "name": "initialVoteQuorumFraction" }
+      ]
+    }
+  ],
+  "form": [
+    {
+      "type": "input",
+      "ref": "_defaultAdmin",
+      "label": "_admin",
+      "component": { "type": "hidden", "subtype": "connected-address" },
+      "locked": false
+    },
+    {
+      "type": "input",
+      "ref": "image",
+      "label": "Image",
+      "component": { "type": "image" },
+      "locked": false,
+      "col": {
+        "sm": 2
+      }
+    },
+    {
+      "type": "input-group",
+      "col": { "sm": 10 },
+      "inputs": [
+        {
+          "type": "input",
+          "ref": "name",
+          "label": "Name",
+          "locked": false,
+          "col": {
+            "sm": 12
+          }
+        },
+        {
+          "type": "input",
+          "ref": "description",
+          "label": "Description",
+          "locked": false
+        }
+      ]
+    },
+    {
+      "type": "input",
+      "ref": "trustedForwarders",
+      "label": "Trusted Forwarders",
+      "defaultValue": { "ref": "trustedForwarders" },
+      "locked": false,
+      "component": {
+        "type": "hidden"
+      }
+    },
+    {
+      "type": "input",
+      "ref": "token",
+      "label": "Token",
+      "locked": false,
+      "component": {
+        "type": "address"
+      }
+    },
+
+    {
+      "type": "input",
+      "ref": "initialVotingDelay",
+      "label": "Initial Voting Delay",
+      "locked": false,
+      "component": {
+        "type": "decimal",
+        "decimals": 0
+      }
+    },
+    {
+      "type": "input",
+      "ref": "initialVotingPeriod",
+      "label": "Initial Voting Period",
+      "locked": false,
+
+      "component": {
+        "type": "decimal",
+        "decimals": 0
+      }
+    },
+
+    {
+      "type": "input",
+      "ref": "initialProposalThreshold",
+      "label": "Initial Proposal Threshold",
+      "locked": false,
+      "component": {
+        "type": "decimal",
+        "decimals": 0
+      }
+    },
+    {
+      "type": "input",
+      "ref": "initialVoteQuorumFraction",
+      "label": "Initial Vote Quorum Fraction",
+      "locked": false,
+      "component": {
+        "type": "decimal",
+        "decimals": 0
+      }
+    }
+  ],
+  "name": "VoteERC20",
+  "description": "Create and vote on proposals"
+}

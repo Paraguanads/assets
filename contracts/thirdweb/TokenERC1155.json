@@ -5,7 +5,7 @@
     "symbol",
     "contractURI",
     "trustedForwarders",
-    "saleRecipient",
+    "primarySaleRecipient",
     "royaltyRecipient",
     "royaltyBps",
     "platformFeeBps",
@@ -24,11 +24,11 @@
           "fields": ["name", "description", "image"]
         },
         { "name": "trustedForwarders" },
-        { "name": "saleRecipient" },
+        { "name": "primarySaleRecipient" },
         { "name": "royaltyRecipient" },
         { "name": "royaltyBps" },
-        { "name": "platformFeeBps" },
-        { "name": "platformFeeRecipient" }
+        { "name": "platformFeeRecipient" },
+        { "name": "platformFeeBps" }
       ]
     }
   ],
@@ -92,8 +92,8 @@
     },
     {
       "type": "input",
-      "ref": "saleRecipient",
-      "label": "Sale Recipient",
+      "ref": "primarySaleRecipient",
+      "label": "Primary Sale Recipient",
       "locked": false,
       "component": {
         "type": "address",
@@ -156,6 +156,6 @@
       ]
     }
   ],
-  "name": "DropERC721",
-  "description": "Release collection of unique NFTs for a set price"
+  "name": "TokenERC1155",
+  "description": "Create editions of ERC1155 tokens"
 }

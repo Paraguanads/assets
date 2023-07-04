@@ -6,10 +6,8 @@
     "contractURI",
     "trustedForwarders",
     "saleRecipient",
-    "royaltyRecipient",
-    "royaltyBps",
-    "platformFeeBps",
-    "platformFeeRecipient"
+    "platformFeeRecipient",
+    "platformFeeBps"
   ],
   "output": [
     {
@@ -25,10 +23,8 @@
         },
         { "name": "trustedForwarders" },
         { "name": "saleRecipient" },
-        { "name": "royaltyRecipient" },
-        { "name": "royaltyBps" },
-        { "name": "platformFeeBps" },
-        { "name": "platformFeeRecipient" }
+        { "name": "platformFeeRecipient" },
+        { "name": "platformFeeBps" }
       ]
     }
   ],
@@ -105,34 +101,6 @@
       "inputs": [
         {
           "type": "input",
-          "ref": "royaltyRecipient",
-          "label": "Royalty recipient",
-          "locked": false,
-          "component": {
-            "type": "address",
-            "subtype": "connected-address"
-          },
-          "col": { "sm": 9, "xs": 12 }
-        },
-        {
-          "type": "input",
-          "ref": "royaltyBps",
-          "label": "Royalty Percentage",
-          "locked": false,
-          "col": { "sm": 3, "xs": 12 },
-          "component": {
-            "type": "decimal",
-            "decimals": 2
-          }
-        }
-      ]
-    },
-
-    {
-      "type": "input-group",
-      "inputs": [
-        {
-          "type": "input",
           "ref": "platformFeeRecipient",
           "label": "Recipient Address",
           "locked": false,
@@ -156,6 +124,6 @@
       ]
     }
   ],
-  "name": "DropERC721",
-  "description": "Release collection of unique NFTs for a set price"
+  "name": "DropERC20",
+  "description": "Release new ERC20 tokens for a set price"
 }

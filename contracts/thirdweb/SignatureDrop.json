@@ -156,6 +156,6 @@
       ]
     }
   ],
-  "name": "DropERC721",
-  "description": "Release collection of unique NFTs for a set price"
+  "name": "SignatureDrop",
+  "description": "Signature based minting of ERC721 tokens"
 }
