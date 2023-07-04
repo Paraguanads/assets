@@ -88,8 +88,9 @@
       "ref": "trustedForwarders",
       "label": "Trusted Forwarders",
       "locked": false,
+      "defaultValue": {"ref": "trustedForwarders"},
       "component": {
-        "type": "address-array"
+        "type": "hidden"
       }
     },
     {
