@@ -113,6 +113,16 @@
         "type": "decimal",
         "decimals": 18
       }
+    },
+    {
+      "type": "input",
+      "ref": "trustedForwarders",
+      "label": "Trusted Forwarders",
+      "defaultValue": { "ref": "trustedForwarders" },
+      "locked": false,
+      "component": {
+        "type": "hidden"
+      }
     }
   ],
   "name": "NFTStake",
