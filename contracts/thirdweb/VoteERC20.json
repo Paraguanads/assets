@@ -3,10 +3,11 @@
     "_defaultAdmin",
     "contractURI",
     "trustedForwarders",
-    "rewardToken",
-    "stakingToken",
-    "timeUnitSeconds",
-    "rewardsPerUnitTime"
+    "token",
+    "initialVotingDelay",
+    "initialVotingPeriod",
+    "initialProposalThreshold",
+    "initialVoteQuorumFraction"
   ],
   "output": [
     {
@@ -19,10 +20,11 @@
           "fields": ["name", "description", "image"]
         },
         { "name": "trustedForwarders" },
-        { "name": "rewardToken" },
-        { "name": "stakingToken" },
-        { "name": "timeUnitSeconds" },
-        { "name": "rewardsPerUnitTime" }
+        { "name": "token" },
+        { "name": "initialVotingDelay" },
+        { "name": "initialVotingPeriod" },
+        { "name": "initialProposalThreshold" },
+        { "name": "initialVoteQuorumFraction" }
       ]
     }
   ],
@@ -77,28 +79,19 @@
     },
     {
       "type": "input",
-      "ref": "rewardToken",
-      "label": "Reward token",
+      "ref": "token",
+      "label": "Token",
       "locked": false,
       "component": {
         "type": "address"
       }
     },
+
     {
       "type": "input",
-      "ref": "stakingToken",
-      "label": "Staking token",
+      "ref": "initialVotingDelay",
+      "label": "Initial Voting Delay",
       "locked": false,
-      "component": {
-        "type": "address"
-      }
-    },
-    {
-      "type": "input",
-      "ref": "timeUnitSeconds",
-      "label": "Time unit (in seconds)",
-      "locked": false,
-      "col": { "sm": 6, "xs": 12 },
       "component": {
         "type": "decimal",
         "decimals": 0
@@ -106,26 +99,37 @@
     },
     {
       "type": "input",
-      "ref": "rewardsPerUnitTime",
-      "label": "Rewards per unit time",
+      "ref": "initialVotingPeriod",
+      "label": "Initial Voting Period",
       "locked": false,
-      "col": { "sm": 6, "xs": 12 },
+
       "component": {
         "type": "decimal",
-        "decimals": 18
+        "decimals": 0
+      }
+    },
+
+    {
+      "type": "input",
+      "ref": "initialProposalThreshold",
+      "label": "Initial Proposal Threshold",
+      "locked": false,
+      "component": {
+        "type": "decimal",
+        "decimals": 0
       }
     },
     {
       "type": "input",
-      "ref": "trustedForwarders",
-      "label": "Trusted Forwarders",
-      "defaultValue": { "ref": "trustedForwarders" },
+      "ref": "initialVoteQuorumFraction",
+      "label": "Initial Vote Quorum Fraction",
       "locked": false,
       "component": {
-        "type": "hidden"
+        "type": "decimal",
+        "decimals": 0
       }
     }
   ],
-  "name": "NFTStake",
-  "description": "This contract allows users to stake their ERC-721 NFTs and get ERC-20 tokens as staking rewards. Contract admin should set the NFT and Reward-token addresses during deployment. These can't be changed later."
+  "name": "VoteERC20",
+  "description": "Create and vote on proposals"
 }

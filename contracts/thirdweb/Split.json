@@ -1,30 +1,24 @@
 {
   "paramsOrder": [
     "_defaultAdmin",
-    "name",
-    "symbol",
     "contractURI",
     "trustedForwarders",
-    "primarySaleRecipient",
-    "platformFeeRecipient",
-    "platformFeeBps"
+    "payees",
+    "shares"
   ],
   "output": [
     {
       "name": "params",
       "fields": [
         { "name": "_defaultAdmin" },
-        { "name": "name" },
-        { "name": "symbol" },
         {
           "type": "ipfs-file",
           "name": "contractURI",
           "fields": ["name", "description", "image"]
         },
         { "name": "trustedForwarders" },
-        { "name": "primarySaleRecipient" },
-        { "name": "platformFeeRecipient" },
-        { "name": "platformFeeBps" }
+        { "name": "payees" },
+        { "name": "shares" }
       ]
     }
   ],
@@ -56,16 +50,7 @@
           "label": "Name",
           "locked": false,
           "col": {
-            "sm": 9
-          }
-        },
-        {
-          "type": "input",
-          "ref": "symbol",
-          "label": "Symbol",
-          "locked": false,
-          "col": {
-            "sm": 3
+            "sm": 12
           }
         },
         {
@@ -78,28 +63,12 @@
     },
     {
       "type": "input",
-      "ref": "creator",
-      "label": "Creator",
-      "locked": false,
-      "component": { "type": "address", "subtype": "connected-address" }
-    },
-    {
-      "type": "input",
       "ref": "trustedForwarders",
       "label": "Trusted Forwarders",
+      "defaultValue": { "ref": "trustedForwarders" },
       "locked": false,
-      "defaultValue": {"ref": "trustedForwarders"},
       "component": {
         "type": "hidden"
-      }
-    },
-    {
-      "type": "input",
-      "ref": "primarySaleRecipient",
-      "label": "Primary Sale Recipient",
-      "locked": false,
-      "component": {
-        "type": "address"
       }
     },
     {
@@ -107,28 +76,33 @@
       "inputs": [
         {
           "type": "input",
-          "ref": "platformFeeRecipient",
-          "label": "Recipient Address",
+          "ref": "payees",
+          "label": "Payees",
           "locked": false,
-          "component": {
-            "type": "address"
+          "col": {
+            "sm": 6
           },
-          "col": { "sm": 9, "xs": 12 }
+          "component": {
+            "type": "address-array"
+          }
         },
+
         {
           "type": "input",
-          "ref": "platformFeeBps",
-          "label": "Percentage",
+          "ref": "shares",
+          "label": "Shares",
           "locked": false,
-          "col": { "sm": 3, "xs": 12 },
+          "col": {
+            "sm": 6
+          },
           "component": {
-            "type": "decimal",
-            "decimals": 2
+            "type": "decimal-array",
+            "decimals": 0
           }
         }
       ]
     }
   ],
-  "name": "TokenERC20",
-  "description": "Deploy an ERC20 Token"
+  "name": "Split",
+  "description": "Distribute funds among multiple recipients"
 }

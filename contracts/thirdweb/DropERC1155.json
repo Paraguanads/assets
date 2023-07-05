@@ -27,8 +27,8 @@
         { "name": "saleRecipient" },
         { "name": "royaltyRecipient" },
         { "name": "royaltyBps" },
-        { "name": "platformFeeBps" },
-        { "name": "platformFeeRecipient" }
+        { "name": "platformFeeRecipient" },
+        { "name": "platformFeeBps" }
       ]
     }
   ],
@@ -156,6 +156,6 @@
       ]
     }
   ],
-  "name": "DropERC721",
-  "description": "Release collection of unique NFTs for a set price"
+  "name": "DropERC1155",
+  "description": "Release ERC1155 tokens for a set price."
 }

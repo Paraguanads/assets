@@ -156,6 +156,6 @@
       ]
     }
   ],
-  "name": "DropERC721",
-  "description": "Release collection of unique NFTs for a set price"
+  "name": "TokenERC721",
+  "description": "Create collection of unique NFTs"
 }

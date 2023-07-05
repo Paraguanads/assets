@@ -1,28 +1,30 @@
 {
   "paramsOrder": [
     "_defaultAdmin",
+    "name",
+    "symbol",
     "contractURI",
     "trustedForwarders",
-    "rewardToken",
-    "stakingToken",
-    "timeUnitSeconds",
-    "rewardsPerUnitTime"
+    "saleRecipient",
+    "platformFeeRecipient",
+    "platformFeeBps"
   ],
   "output": [
     {
       "name": "params",
       "fields": [
         { "name": "_defaultAdmin" },
+        { "name": "name" },
+        { "name": "symbol" },
         {
           "type": "ipfs-file",
           "name": "contractURI",
           "fields": ["name", "description", "image"]
         },
         { "name": "trustedForwarders" },
-        { "name": "rewardToken" },
-        { "name": "stakingToken" },
-        { "name": "timeUnitSeconds" },
-        { "name": "rewardsPerUnitTime" }
+        { "name": "saleRecipient" },
+        { "name": "platformFeeRecipient" },
+        { "name": "platformFeeBps" }
       ]
     }
   ],
@@ -54,7 +56,16 @@
           "label": "Name",
           "locked": false,
           "col": {
-            "sm": 12
+            "sm": 9
+          }
+        },
+        {
+          "type": "input",
+          "ref": "symbol",
+          "label": "Symbol",
+          "locked": false,
+          "col": {
+            "sm": 3
           }
         },
         {
@@ -77,55 +88,42 @@
     },
     {
       "type": "input",
-      "ref": "rewardToken",
-      "label": "Reward token",
+      "ref": "saleRecipient",
+      "label": "Sale Recipient",
       "locked": false,
       "component": {
-        "type": "address"
+        "type": "address",
+        "subtype": "connected-address"
       }
     },
     {
-      "type": "input",
-      "ref": "stakingToken",
-      "label": "Staking token",
-      "locked": false,
-      "component": {
-        "type": "address"
-      }
-    },
-    {
-      "type": "input",
-      "ref": "timeUnitSeconds",
-      "label": "Time unit (in seconds)",
-      "locked": false,
-      "col": { "sm": 6, "xs": 12 },
-      "component": {
-        "type": "decimal",
-        "decimals": 0
-      }
-    },
-    {
-      "type": "input",
-      "ref": "rewardsPerUnitTime",
-      "label": "Rewards per unit time",
-      "locked": false,
-      "col": { "sm": 6, "xs": 12 },
-      "component": {
-        "type": "decimal",
-        "decimals": 18
-      }
-    },
-    {
-      "type": "input",
-      "ref": "trustedForwarders",
-      "label": "Trusted Forwarders",
-      "defaultValue": { "ref": "trustedForwarders" },
-      "locked": false,
-      "component": {
-        "type": "hidden"
-      }
+      "type": "input-group",
+      "inputs": [
+        {
+          "type": "input",
+          "ref": "platformFeeRecipient",
+          "label": "Recipient Address",
+          "locked": false,
+          "component": {
+            "type": "address",
+            "subtype": "connected-address"
+          },
+          "col": { "sm": 9, "xs": 12 }
+        },
+        {
+          "type": "input",
+          "ref": "platformFeeBps",
+          "label": "Platform Fee Percentage",
+          "locked": false,
+          "col": { "sm": 3, "xs": 12 },
+          "component": {
+            "type": "decimal",
+            "decimals": 2
+          }
+        }
+      ]
     }
   ],
-  "name": "NFTStake",
-  "description": "This contract allows users to stake their ERC-721 NFTs and get ERC-20 tokens as staking rewards. Contract admin should set the NFT and Reward-token addresses during deployment. These can't be changed later."
+  "name": "DropERC20",
+  "description": "Release new ERC20 tokens for a set price"
 }
